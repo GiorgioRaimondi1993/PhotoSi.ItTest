@@ -15,22 +15,12 @@ public class Program
 
         var app = builder.Build();
 
-        EnsureMigration(app).GetAwaiter().GetResult();
-
         app.UseRouting();
         app.UseEndpoints(e => { e.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
 
-        app.Run();
-    }
+        ApplyMigrations(app);
 
-    private static async Task EnsureMigration(WebApplication app)
-    {
-        if (app.Environment.IsDevelopment())
-        {
-            await using var serviceScope = app.Services.CreateAsyncScope();
-            await using var dbCtx = serviceScope.ServiceProvider.GetRequiredService<UsersDbContext>();
-            await dbCtx.Database.MigrateAsync();
-        }
+        app.Run();
     }
 
     private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
@@ -57,5 +47,15 @@ public class Program
 
         services.AddScoped<IUsersRepository, UsersRepository>();
         services.AddScoped<ILocationsRepository, LocationsRepository>();
+    }
+
+    private static void ApplyMigrations(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            using var serviceScope = app.Services.CreateScope();
+            using var dbCtx = serviceScope.ServiceProvider.GetRequiredService<UsersDbContext>();
+            dbCtx.Database.Migrate();
+        }
     }
 }
