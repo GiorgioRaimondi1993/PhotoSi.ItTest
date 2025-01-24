@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PhotoSi.Orders.Application.Mappers;
 using PhotoSi.Orders.Application.Repositories;
 using PhotoSi.Orders.Infrastracture.Repositories;
 using PhotoSi.Orders.Infrastracture.Sql;
@@ -27,7 +28,7 @@ public class Program
         services.AddControllersWithViews();
 
         // Register Mapper and Mediator
-        Assembly applicationAssembly = typeof(IOrdersRepository).Assembly;
+        Assembly applicationAssembly = typeof(MappingOrders).Assembly;
         services.AddAutoMapper(applicationAssembly);
         services.AddMediatR(cfg =>
         {

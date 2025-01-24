@@ -1,33 +1,34 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using PhotoSi.Orders.Application.Mappers;
-using PhotoSi.Orders.Application.Repositories;
-using PhotoSi.Orders.UnitTest.Scenario;
-using PhotoSi.Orders.UnitTest.Services;
+using PhotoSi.Locations.UnitTest.Services;
+using PhotoSi.Users.Application.Mappers;
+using PhotoSi.Users.Application.Repositories;
+using PhotoSi.Users.UnitTest.Scenario;
+using PhotoSi.Users.UnitTest.Services;
 using System.Reflection;
 using Xunit;
 
-namespace PhotoSi.Orders.UnitTest;
+namespace PhotoSi.Users.UnitTest;
 
-[Collection(nameof(Orders))]
-public class OrderBaseTest
+[Collection(nameof(Users))]
+public class UserBaseTest
 {
     /// <summary>
     /// Service provider.
     /// </summary>
     protected IServiceProvider ServiceProvider { get; }
 
-    protected OrderScenario Scenario => ServiceProvider.GetRequiredService<OrderScenario>();
+    protected UserScenario Scenario => ServiceProvider.GetRequiredService<UserScenario>();
 
     protected IMediator Mediator => ServiceProvider.GetRequiredService<IMediator>();
 
-    public OrderBaseTest()
+    public UserBaseTest()
     {
         ServiceCollection services = new();
 
         // Register Default Services
 
-        Assembly applicationAssembly = typeof(MappingOrders).Assembly;
+        Assembly applicationAssembly = typeof(MappingUser).Assembly;
         services.AddAutoMapper(applicationAssembly);
         services.AddMediatR(cfg =>
         {
@@ -36,8 +37,9 @@ public class OrderBaseTest
 
         // Add mock Scenario and mocked Repositories       
         services
-            .AddScoped<OrderScenario>()
-            .AddScoped<IOrdersRepository, MockOrderRepository>();
+            .AddScoped<UserScenario>()
+            .AddScoped<IUsersRepository, MockUsersRepository>()
+            .AddScoped<ILocationsRepository, MockLocationsRepository>();
 
         ServiceProvider = services.BuildServiceProvider();
     }

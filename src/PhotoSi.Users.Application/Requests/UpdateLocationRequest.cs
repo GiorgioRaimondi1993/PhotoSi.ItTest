@@ -9,23 +9,23 @@ public class UpdateLocationRequest : IRequest
 
 
     [JsonProperty("city")]
-    public string City { get; private set; }
+    public string City { get; init; }
 
 
     [JsonProperty("province")]
-    public string Province { get; private set; }
+    public string Province { get; init; }
 
 
     [JsonProperty("country")]
-    public string Country { get; private set; }
+    public string Country { get; init; }
 
 
     [JsonProperty("address")]
-    public string Address { get; private set; }
+    public string Address { get; init; }
 
 
     [JsonProperty("cap")]
-    public string Cap { get; private set; }
+    public string Cap { get; init; }
 
     public void SetId(Guid id)
     {

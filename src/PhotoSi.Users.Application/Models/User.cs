@@ -11,7 +11,8 @@ public class User
     // EF only
     protected User() { }
 
-    protected User(Guid id,
+    // UT only
+    public User(Guid id,
                    string firstName,
                    string lastName)
     {

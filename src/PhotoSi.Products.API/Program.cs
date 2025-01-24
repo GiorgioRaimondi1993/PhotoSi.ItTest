@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using PhotoSi.Products.Application.Mappers;
 using PhotoSi.Products.Application.Repositories;
 using PhotoSi.Products.Infrastracture.Repositories;
 using PhotoSi.Products.Infrastracture.Sql;
+using System.Reflection;
 
 public class Program
 {
@@ -24,6 +26,17 @@ public class Program
         services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
         services.AddControllersWithViews();
+
+        // Register Default Services
+
+        Assembly applicationAssembly = typeof(MappingProducts).Assembly;
+        services.AddAutoMapper(applicationAssembly);
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(applicationAssembly);
+        });
+
+        // Register SQL and Repositories
 
         services.AddDbContext<ProductsDbContext>(opt =>
         {

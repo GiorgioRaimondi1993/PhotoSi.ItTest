@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using PhotoSi.Users.Application.Mappers;
 using PhotoSi.Users.Application.Repositories;
 using PhotoSi.Users.Infrastracture.Repositories;
 using PhotoSi.Users.Infrastracture.Sql;
+using System.Reflection;
 
 public class Program
 {
@@ -25,6 +27,15 @@ public class Program
 
         services.AddControllersWithViews();
 
+        // Register Mapper and Mediator
+        Assembly applicationAssembly = typeof(MappingUser).Assembly;
+        services.AddAutoMapper(applicationAssembly);
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(applicationAssembly);
+        });
+
+        // Register Db Services
         services.AddDbContext<UsersDbContext>(opt =>
         {
             opt.UseSqlServer(configuration.GetConnectionString("Users"));

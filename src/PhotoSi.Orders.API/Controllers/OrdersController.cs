@@ -21,7 +21,7 @@ public class OrdersController : ControllerBase
     [HttpGet("{id:guid}")]
     public async Task<ActionResult> GetOrder([FromRoute] Guid id)
     {
-        GetOrderRequest request = new() { OrderId = id };
+        GetOrderRequest request = new() { Id = id };
 
         OrderDto response = await _mediator.Send(request);
 

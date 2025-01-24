@@ -9,11 +9,11 @@ public class UpdateUserRequest : IRequest
 
 
     [JsonProperty("firstName")]
-    public string FirstName { get; private set; }
+    public string FirstName { get; init; }
 
 
     [JsonProperty("lastName")]
-    public string LastName { get; private set; }
+    public string LastName { get; init; }
 
     public void SetId(Guid id)
     {

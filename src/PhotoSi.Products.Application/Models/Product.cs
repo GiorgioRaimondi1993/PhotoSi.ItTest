@@ -11,7 +11,8 @@ public class Product
     // EF only
     protected Product() { }
 
-    protected Product(Guid id,
+    // IT only
+    public Product(Guid id,
                       string name,
                       string category)
     {

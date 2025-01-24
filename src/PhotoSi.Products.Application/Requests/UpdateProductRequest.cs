@@ -9,11 +9,11 @@ public class UpdateProductRequest : IRequest
 
 
     [JsonProperty("name")]
-    public string Name { get; private set; }
+    public string Name { get; init; }
 
 
     [JsonProperty("category")]
-    public string Category { get; private set; }
+    public string Category { get; init; }
 
     public void SetId(Guid id)
     {

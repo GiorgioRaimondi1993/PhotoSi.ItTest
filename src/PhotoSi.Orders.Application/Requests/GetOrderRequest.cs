@@ -5,7 +5,7 @@ namespace PhotoSi.Orders.Application.Requests;
 
 public class GetOrderRequest : IRequest<OrderDto>
 {
-    public Guid OrderId { get; init; }
+    public Guid Id { get; init; }
 }
 
 public class OrderDto

@@ -2,7 +2,7 @@
 using PhotoSi.Orders.UnitTest.Scenario;
 using Xunit;
 
-namespace PhotoSi.Orders.UnitTest.Tests;
+namespace PhotoSi.Orders.UnitTest.Tests.RequestHandlers;
 public class UpdateOrderRequestHandlerTest : OrderBaseTest
 {
     /// <summary>

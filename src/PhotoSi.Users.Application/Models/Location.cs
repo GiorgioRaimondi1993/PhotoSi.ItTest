@@ -19,7 +19,8 @@ public class Location
     // EF only
     protected Location() { }
 
-    protected Location(Guid id,
+    // UT only
+    public Location(Guid id,
                        Guid userId,
                        string city,
                        string province,

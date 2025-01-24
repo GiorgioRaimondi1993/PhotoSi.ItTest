@@ -33,7 +33,9 @@ public class MockOrderRepository : IOrdersRepository
 
     public Task<IEnumerable<Order>> GetListAsync(Guid? userId = null, int pageNum = 0, int pageSize = 50)
     {
-        IEnumerable<Order> orders = _scenario.Orders.Values.Skip(pageNum * pageSize).Take(pageSize).ToList();
+        IEnumerable<Order> orders = _scenario.Orders.Values
+            .Where(o => userId is null || o.UserId == userId)
+            .Skip(pageNum * pageSize).Take(pageSize).ToList();
 
         return Task.FromResult(orders);
     }
