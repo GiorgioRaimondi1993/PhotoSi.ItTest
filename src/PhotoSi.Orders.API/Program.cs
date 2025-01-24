@@ -11,14 +11,26 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        ConfigureServices(builder.Services, builder.Configuration);
+
         var app = builder.Build();
 
-        ConfigureServices(builder.Services, builder.Configuration);
+        EnsureMigration(app).GetAwaiter().GetResult();
 
         app.UseRouting();
         app.UseEndpoints(e => { e.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
 
         app.Run();
+    }
+
+    private static async Task EnsureMigration(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            await using var serviceScope = app.Services.CreateAsyncScope();
+            await using var dbCtx = serviceScope.ServiceProvider.GetRequiredService<OrdersDbContext>();
+            await dbCtx.Database.MigrateAsync();
+        }
     }
 
     private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
@@ -38,9 +50,10 @@ public class Program
         // Register Db Services
         services.AddDbContext<OrdersDbContext>(opt =>
         {
-            opt.UseSqlServer(configuration.GetConnectionString("Orders"));
+            opt.ConfigureLoggingCacheTime(TimeSpan.FromMinutes(10))
+               .UseSqlServer(configuration.GetConnectionString("Orders"));
         });
 
-        services.AddSingleton<IOrdersRepository, OrdersRepository>();
+        services.AddScoped<IOrdersRepository, OrdersRepository>();
     }
 }

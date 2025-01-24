@@ -11,14 +11,26 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        ConfigureServices(builder.Services, builder.Configuration);
+
         var app = builder.Build();
 
-        ConfigureServices(builder.Services, builder.Configuration);
+        EnsureMigration(app).GetAwaiter().GetResult();
 
         app.UseRouting();
         app.UseEndpoints(e => { e.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
 
         app.Run();
+    }
+
+    private static async Task EnsureMigration(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            await using var serviceScope = app.Services.CreateAsyncScope();
+            await using var dbCtx = serviceScope.ServiceProvider.GetRequiredService<UsersDbContext>();
+            await dbCtx.Database.MigrateAsync();
+        }
     }
 
     private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
@@ -36,12 +48,14 @@ public class Program
         });
 
         // Register Db Services
+
         services.AddDbContext<UsersDbContext>(opt =>
         {
-            opt.UseSqlServer(configuration.GetConnectionString("Users"));
+            opt.ConfigureLoggingCacheTime(TimeSpan.FromMinutes(10))
+               .UseSqlServer(connectionString: configuration.GetConnectionString("Users"));
         });
 
-        services.AddSingleton<IUsersRepository, UsersRepository>();
-        services.AddSingleton<ILocationsRepository, LocationsRepository>();
+        services.AddScoped<IUsersRepository, UsersRepository>();
+        services.AddScoped<ILocationsRepository, LocationsRepository>();
     }
 }
