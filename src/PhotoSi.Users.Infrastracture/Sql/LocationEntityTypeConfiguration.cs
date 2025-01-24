@@ -7,7 +7,7 @@ public class LocationEntityTypeConfiguration : IEntityTypeConfiguration<Location
 {
     public void Configure(EntityTypeBuilder<Location> builder)
     {
-        builder.ToTable("Locations", "PhotoSi");
+        builder.ToTable("Locations", "dbo");
 
         builder.HasKey(o => o.Id);
         builder.Property(o => o.UserId).IsRequired();

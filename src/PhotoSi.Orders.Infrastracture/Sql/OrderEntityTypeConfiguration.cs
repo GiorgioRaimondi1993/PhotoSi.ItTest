@@ -7,7 +7,7 @@ public class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
-        builder.ToTable("Orders", "PhotoSi");
+        builder.ToTable("Orders", "dbo");
 
         builder.HasKey(o => o.Id);
         builder.Property(o => o.UserId).IsRequired();

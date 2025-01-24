@@ -7,7 +7,7 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("Users", "PhotoSi");
+        builder.ToTable("Users", "dbo");
 
         builder.HasKey(o => o.Id);
         builder.Property(o => o.FirstName).IsRequired();
