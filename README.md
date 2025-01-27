@@ -53,10 +53,10 @@ docker-compose down
 
 ### 4. Testing the APIs
 The running services will expose the apis at following urls:
-	- Gateway : http://localhost:8000
-	- Users : http://localhost:7006/user and http://localhost:7006/locations
-	- Products : http://localhost:7016/products
-	- Orders : http://localhost:7026/orders
+ - Gateway : http://localhost:8000
+ - Users : http://localhost:7006/user and http://localhost:7006/locations
+ - Products : http://localhost:7016/products
+ - Orders : http://localhost:7026/orders
 
 **Using Postman:**
 1. Import the Postman collection provided in the repository (postman_collection.json).
