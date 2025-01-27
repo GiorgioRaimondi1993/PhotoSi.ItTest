@@ -15,12 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/user",
+							"raw": "http://localhost:8000/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"user"
 							]
@@ -34,12 +34,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/user/:id",
+							"raw": "http://localhost:8000/user/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"user",
 								":id"
@@ -60,12 +60,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/user/:id",
+							"raw": "http://localhost:8000/user/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"user",
 								":id"
@@ -73,7 +73,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "dd99b00c-e8cf-49ef-95eb-0a0a3e52fd58"
+									"value": "{{userId}}"
 								}
 							]
 						}
@@ -109,12 +109,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7006/user",
+							"raw": "http://localhost:8000/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"user"
 							]
@@ -137,12 +137,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7006/user/:id",
+							"raw": "http://localhost:8000/user/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"user",
 								":id"
@@ -168,12 +168,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7026/orders",
+							"raw": "http://localhost:8000/orders",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7026",
+							"port": "8000",
 							"path": [
 								"orders"
 							]
@@ -187,12 +187,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7026/orders/:id",
+							"raw": "http://localhost:8000/orders/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7026",
+							"port": "8000",
 							"path": [
 								"orders",
 								":id"
@@ -213,12 +213,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7026/orders/:id",
+							"raw": "http://localhost:8000/orders/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7026",
+							"port": "8000",
 							"path": [
 								"orders",
 								":id"
@@ -262,12 +262,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7026/orders",
+							"raw": "http://localhost:8000/orders",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7026",
+							"port": "8000",
 							"path": [
 								"orders"
 							]
@@ -290,12 +290,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7026/orders/:id",
+							"raw": "http://localhost:8000/orders/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7026",
+							"port": "8000",
 							"path": [
 								"orders",
 								":id"
@@ -321,12 +321,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7016/products",
+							"raw": "http://localhost:8000/products",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7016",
+							"port": "8000",
 							"path": [
 								"products"
 							]
@@ -340,12 +340,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7016/products/:id",
+							"raw": "http://localhost:8000/products/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7016",
+							"port": "8000",
 							"path": [
 								"products",
 								":id"
@@ -366,12 +366,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7016/products/:id",
+							"raw": "http://localhost:8000/products/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7016",
+							"port": "8000",
 							"path": [
 								"products",
 								":id"
@@ -415,12 +415,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7016/products",
+							"raw": "http://localhost:8000/products",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7016",
+							"port": "8000",
 							"path": [
 								"products"
 							]
@@ -443,12 +443,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7016/products/:id",
+							"raw": "http://localhost:8000/products/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7016",
+							"port": "8000",
 							"path": [
 								"products",
 								":id"
@@ -474,12 +474,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/locations",
+							"raw": "http://localhost:8000/locations",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"locations"
 							]
@@ -493,12 +493,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/locations/:id",
+							"raw": "http://localhost:8000/locations/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"locations",
 								":id"
@@ -519,12 +519,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7006/locations/:id",
+							"raw": "http://localhost:8000/locations/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"locations",
 								":id"
@@ -568,12 +568,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7006/locations",
+							"raw": "http://localhost:8000/locations",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"locations"
 							]
@@ -596,12 +596,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7006/locations/:id",
+							"raw": "http://localhost:8000/locations/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "7006",
+							"port": "8000",
 							"path": [
 								"locations",
 								":id"
