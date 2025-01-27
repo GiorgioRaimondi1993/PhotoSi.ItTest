@@ -22,7 +22,7 @@ Before testing the project, ensure you have the following installed:
 Clone the project from the repository and navigate to its root folder:
 ```bash
 git clone https://github.com/GiorgioRaimondi1993/PhotoSi.ItTest.git
-cd PhotoSi.ItTest.MarketPlace
+cd PhotoSi.ItTest
 ```
 
 ### 2. Configure Environment Variables
