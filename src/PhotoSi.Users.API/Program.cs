@@ -42,7 +42,7 @@ public class Program
         services.AddDbContext<UsersDbContext>(opt =>
         {
             opt.ConfigureLoggingCacheTime(TimeSpan.FromMinutes(10))
-               .UseSqlServer(connectionString: configuration.GetConnectionString("Users"));
+               .UseSqlServer(connectionString: configuration.GetConnectionString("SqlServer"));
         });
 
         services.AddScoped<IUsersRepository, UsersRepository>();

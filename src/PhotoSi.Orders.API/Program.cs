@@ -38,10 +38,11 @@ public class Program
         });
 
         // Register Db Services
+
         services.AddDbContext<OrdersDbContext>(opt =>
         {
             opt.ConfigureLoggingCacheTime(TimeSpan.FromMinutes(10))
-               .UseSqlServer(configuration.GetConnectionString("Orders"));
+                   .UseSqlServer(connectionString: configuration.GetConnectionString("SqlServer"));
         });
 
         services.AddScoped<IOrdersRepository, OrdersRepository>();

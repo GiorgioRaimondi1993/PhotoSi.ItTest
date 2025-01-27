@@ -44,7 +44,7 @@ public class Program
         services.AddDbContext<ProductsDbContext>(opt =>
         {
             opt.ConfigureLoggingCacheTime(TimeSpan.FromMinutes(10))
-               .UseSqlServer(configuration.GetConnectionString("Products"));
+               .UseSqlServer(connectionString: configuration.GetConnectionString("SqlServer"));
         });
 
         services.AddScoped<IProductsRepository, ProductsRepository>();

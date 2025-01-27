@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+
+  ms-sql-server:    
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5434:1433"
+  photosi.users.api:
+    image: ${DOCKER_REGISTRY-}photosiusersapi
+    build:
+      context: .
+      dockerfile: src/PhotoSi.Users.API/Dockerfile
+    ports:
+      - 7006:7006
+      - 7007:7007       
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7006
+  photosi.orders.api:
+    image: ${DOCKER_REGISTRY-}photosiordersapi
+    build:
+      context: .
+      dockerfile: src/PhotoSi.Orders.API/Dockerfile
+    ports:
+      - 7026:7026
+      - 7027:7027       
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7026
+  photosi.products.api:
+    image: ${DOCKER_REGISTRY-}photosiproductsapi
+    build:
+      context: .
+      dockerfile: src/PhotoSi.Products.API/Dockerfile
+    ports:
+      - 7016:7016
+      - 7017:7017      
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7016

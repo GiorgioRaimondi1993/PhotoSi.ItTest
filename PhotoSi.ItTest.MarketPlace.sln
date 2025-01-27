@@ -31,9 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSi.Products.Infrastrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSi.Orders.UnitTest", "src\PhotoSi.Orders.UnitTest\PhotoSi.Orders.UnitTest.csproj", "{207B0DA1-6A6D-40F7-97BF-757D6945C8ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSi.Products.UnitTest", "src\PhotoSi.Products.UnitTest\PhotoSi.Products.UnitTest.csproj", "{985081C4-D719-4825-8C80-18762787B1ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSi.Products.UnitTest", "src\PhotoSi.Products.UnitTest\PhotoSi.Products.UnitTest.csproj", "{985081C4-D719-4825-8C80-18762787B1ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSi.Users.UnitTest", "src\PhotoSi.Users.UnitTest\PhotoSi.Users.UnitTest.csproj", "{B8D85325-5156-465C-B9C7-A603ED13D08D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSi.Users.UnitTest", "src\PhotoSi.Users.UnitTest\PhotoSi.Users.UnitTest.csproj", "{B8D85325-5156-465C-B9C7-A603ED13D08D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{44AF9693-33CD-42E0-86DC-3DE191D26EFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{B8D85325-5156-465C-B9C7-A603ED13D08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D85325-5156-465C-B9C7-A603ED13D08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D85325-5156-465C-B9C7-A603ED13D08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44AF9693-33CD-42E0-86DC-3DE191D26EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44AF9693-33CD-42E0-86DC-3DE191D26EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44AF9693-33CD-42E0-86DC-3DE191D26EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44AF9693-33CD-42E0-86DC-3DE191D26EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
