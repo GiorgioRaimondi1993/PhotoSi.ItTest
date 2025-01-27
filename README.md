@@ -59,7 +59,7 @@ The running services will expose the apis at following urls:
  - Orders : http://localhost:7026/orders
 
 **Using Postman:**
-1. Import the Postman collection provided in the repository (postman_collection.json).
+1. Import the Postman collection provided in the repository (postman/PhotoSI.postman_collection.json).
 2. Execute the predefined API requests to verify functionality.
 3. Test typical operations such as:
 	- GET to retrieve data.
