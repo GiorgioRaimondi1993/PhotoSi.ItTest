@@ -9,6 +9,16 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - "5434:1433"
+  photosi.bff:
+    image: ${DOCKER_REGISTRY-}photosibff
+    build:
+      context: .
+      dockerfile: src/PhotoSi.Gateways.Bff/Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8000
   photosi.users.api:
     image: ${DOCKER_REGISTRY-}photosiusersapi
     build:
@@ -16,7 +26,6 @@ services:
       dockerfile: src/PhotoSi.Users.API/Dockerfile
     ports:
       - 7006:7006
-      - 7007:7007       
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=7006
@@ -27,7 +36,6 @@ services:
       dockerfile: src/PhotoSi.Orders.API/Dockerfile
     ports:
       - 7026:7026
-      - 7027:7027       
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=7026
@@ -37,8 +45,7 @@ services:
       context: .
       dockerfile: src/PhotoSi.Products.API/Dockerfile
     ports:
-      - 7016:7016
-      - 7017:7017      
+      - 7016:7016     
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=7016

@@ -1,0 +1,274 @@
+{
+  "Routes": [
+    // Users
+    {
+      "DownstreamPathTemplate": "/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetUsers"
+    },
+    {
+      "DownstreamPathTemplate": "/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{userId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetUser"
+    },
+    {
+      "DownstreamPathTemplate": "/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{userId}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "Key": "UpdateUser"
+    },
+    {
+      "DownstreamPathTemplate": "/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{userId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "Key": "DeleteUser"
+    },
+    {
+      "DownstreamPathTemplate": "/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "Post" ],
+      "Key": "CreateUser"
+    },
+
+    // Locations
+    {
+      "DownstreamPathTemplate": "/locations",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/locations",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetLocations"
+    },
+    {
+      "DownstreamPathTemplate": "/locations/{locationId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/locations/{locationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetLocation"
+    },
+    {
+      "DownstreamPathTemplate": "/locations/{locationId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/locations/{locationId}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "Key": "UpdateLocation"
+    },
+    {
+      "DownstreamPathTemplate": "/locations/{locationId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/locations/{locationId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "Key": "DeleteLocation"
+    },
+    {
+      "DownstreamPathTemplate": "/locations",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.users.api",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/locations",
+      "UpstreamHttpMethod": [ "Post" ],
+      "Key": "CreateLocation"
+    },
+
+    // Orders
+    {
+      "DownstreamPathTemplate": "/orders",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.orders.api",
+          "Port": 7026
+        }
+      ],
+      "UpstreamPathTemplate": "/orders",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetOrders"
+    },
+    {
+      "DownstreamPathTemplate": "/orders/{orderId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.orders.api",
+          "Port": 7026
+        }
+      ],
+      "UpstreamPathTemplate": "/orders/{orderId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetOrder"
+    },
+    {
+      "DownstreamPathTemplate": "/orders/{orderId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.orders.api",
+          "Port": 7026
+        }
+      ],
+      "UpstreamPathTemplate": "/orders/{orderId}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "Key": "UpdateOrder"
+    },
+    {
+      "DownstreamPathTemplate": "/orders/{orderId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.orders.api",
+          "Port": 7026
+        }
+      ],
+      "UpstreamPathTemplate": "/orders/{orderId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "Key": "DeleteOrder"
+    },
+    {
+      "DownstreamPathTemplate": "/orders",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.orders.api",
+          "Port": 7026
+        }
+      ],
+      "UpstreamPathTemplate": "/orders",
+      "UpstreamHttpMethod": [ "Post" ],
+      "Key": "CreateOrder"
+    },
+
+    // Products
+    {
+      "DownstreamPathTemplate": "/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.products.api",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/products",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetProducts"
+    },
+    {
+      "DownstreamPathTemplate": "/products/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.products.api",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{productId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "GetProduct"
+    },
+    {
+      "DownstreamPathTemplate": "/products/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.products.api",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{productId}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "Key": "UpdateProduct"
+    },
+    {
+      "DownstreamPathTemplate": "/products/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.products.api",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{productId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "Key": "DeleteProduct"
+    },
+    {
+      "DownstreamPathTemplate": "/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "photosi.products.api",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/products",
+      "UpstreamHttpMethod": [ "Post" ],
+      "Key": "CreateProduct"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8000"
+  }
+}
